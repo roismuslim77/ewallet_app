@@ -1,0 +1,42 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ${CONTAINER_NAME}
+    restart: ${RESTART}
+    environment:
+      - APP_ENV=${APP_ENV}
+      - VIRTUAL_HOST=${APP_HOST}
+      - VIRTUAL_PORT=${APP_PORT}
+      - TZ=${APP_TZ}
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    volumes:
+      - ./:/app
+    networks:
+      - network-inventory-simple
+
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    networks:
+      - network-inventory-simple
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASS}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_DB: ${POSTGRES_DB}
+      PG_DATA: /var/lib/postgresql/data
+    ports:
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+    volumes:
+      - ./pgdata/data:/var/lib/postgresql/data
+
+volumes:
+  app:
+    driver: local
+
+networks:
+  network-inventory-simple:
