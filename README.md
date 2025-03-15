@@ -1,5 +1,5 @@
 # Wallet APP with laravel and GoLang
-Golang Architecture with DDD (Domain Data Driven) and integrate with Payment Gateway Midtrans
+Golang Architecture with DDD (Domain-Driven Design) and integrate with Payment Gateway Midtrans
 
 
 ## Project setup & RUN
