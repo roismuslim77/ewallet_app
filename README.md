@@ -15,8 +15,8 @@ Golang Architecture with DDD (Domain Data Driven) and integrate with Payment Gat
 - POST /auth/login: Untuk authentication. 
 - POST /auth/register: Untuk register user access. 
 
-- POST /walllet/topup: Untuk top-up saldo. 
-- POST /walllet/webhook: Untuk mendapatkan status dari midtrans via webhook. 
-- POST /walllet/pay: Untuk melakukan transaksi transfer ke pengguna lain. 
-- GET /walllet/history: Untuk melihat riwayat transaksi. 
+- POST /wallet/topup: Untuk top-up saldo. 
+- POST /wallet/webhook: Untuk mendapatkan status dari midtrans via webhook. 
+- POST /wallet/pay: Untuk melakukan transaksi transfer ke pengguna lain. 
+- GET /wallet/history: Untuk melihat riwayat transaksi. 
 ```
